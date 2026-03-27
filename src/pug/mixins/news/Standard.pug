@@ -1,0 +1,60 @@
+mixin HeroSection 
+  +Section({
+    image: `${CWD}assets/img/header-02.jpg`,
+    className: 'overlay',
+    attrs: {
+      'data-zanim-xs': {
+        delay: 0,
+        ease: 'Sine.easeInOut',
+        duration: 1,
+        from: {
+          scale: 1.05,
+          alpha: 1
+        },
+        to: {
+          scale: 1,
+          alpha: 1
+        }
+      },
+      'data-zanim-trigger': 'scroll'
+    }
+  }, container).py-0.overflow-hidden
+    .row.flex-center.py-6.min-vh-50 
+      .col-auto.text-center 
+        p.text-white.lead.fst-italic(
+          data-zanim-xs!={
+            delay: 0.7,
+            duration: 0.7,
+            ease: 'Power2.easeOut',
+            from: {y: 20, opacity: 0},
+            to: {y: 0, opacity: 1}
+          }
+          data-zanim-trigger='scroll'
+        ) January 23, 2017
+        h2.text-uppercase.text-white.fw-bolder.text-center.mb-3.fs-7.fs-lg-5(
+          data-zanim-xs!={
+            delay: 0,
+            ease: 'Sine.easeInOut',
+            duration: 1,
+            from: {
+              letterSpacing: '0.25em',
+              alpha: 0
+            },
+            to: {
+              letterSpacing: '0.05em',
+              alpha: 1
+            }
+          }
+          data-zanim-trigger='scroll'
+        ) Explore your 
+          br
+          | imaginations!
+
+mixin Standard
+  +Section(container).pt-8
+    .row.justify-content-center 
+      .col-lg-8
+        p There's no better way to help than to get out and experience nature for yourself.
+        p.dropcap Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit.
+        p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        +Comment

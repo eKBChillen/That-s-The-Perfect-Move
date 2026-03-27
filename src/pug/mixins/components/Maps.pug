@@ -1,0 +1,14 @@
+mixin MapBasicExample 
+  .googlemap(data-gmap data-latlng='41.8333925,-88.0123393' data-scrollwheel='false', data-mapid="a2a07f618947e1cca5b1a9b0" data-icon=`${CWD}assets/img/map-marker.png`, data-zoom='15' style="min-height:300px")
+      .marker-content.py-3
+        h5 Tooltip title
+        p
+          | A nice description about your place
+          br
+          |  Customize it as you want.
+
+mixin StreetMapView 
+  .googlemap.min-vh-50(data-gmap data-latlng='48.8588723,2.2932638' data-pov!={
+      heading: 120,
+      pitch: 0
+    } data-scrollwheel='false' data-icon=`${CWD}assets/img/map-marker.png`  data-zoom='1' data-theme='streetview')

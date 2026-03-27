@@ -1,0 +1,56 @@
+append variables 
+  - 
+    var item = {
+      image: `assets/images/video.jpg`,
+      video: `assets/videos/video`,
+      intro: 'welcome to',
+      titleOne: 'baikal',
+      titleTwo: 'LIVELINESS',
+      subtitleOne: 'Retreats',
+      subtitleTwo: 'Adventure',
+      subtitleThree: 'spa'
+    }
+mixin VideoFull
+  .overflow-hidden
+    +Section({image: `${CWD}${item.image}`, video:{mp4: `${CWD}${item.video}`}, className: "overlay", attrs: {"data-zanim-xs": {delay: 0.5, animation: 'zoom-out'}, "data-zanim-trigger": "scroll"}}, container).header.py-0.text-center
+      .row.align-items-center.h-full 
+        .col
+          h5.text-white.fs-9.fs-sm-8.mb-4.text-uppercase(data-zanim-xs!= {delay:1.2})=  item.intro
+          h1.text-white.fs-6.fs-sm-4.fw-bold.ls-3.text-uppercase.overflow-hidden 
+            span.d-block(data-zanim-xs!= {delay:1.3})= item.titleOne 
+            span.d-block(data-zanim-xs!= {delay:1.4})= item.titleTwo 
+          .text-white(data-zanim-xs!= {delay:1.5}) 
+            a(href="#!").fw-medium.fs-9.fs-sm-7.text-white.text-capitalize= item.subtitleOne
+            span.px-2.fs-10.d-inline-block &#9679;
+            a(href="#!").fw-medium.fs-9.fs-sm-7.text-white.text-capitalize= item.subtitleTwo
+            span.px-2.fs-10.d-inline-block &#9679;
+            a(href="#!").fw-medium.fs-9.fs-sm-7.text-white.text-capitalize= item.subtitleThree
+          a.btn.rounded-capsule.btn-primary.mt-5(href="#!" data-zanim-xs!= {delay:1.7}) Our Story 
+        +ScrollSpyButton({
+          attrs: {"data-zanim-xs": {delay: 2.3}, "data-zanim-trigger": "scroll"}
+        })
+    #target-down
+
+
+
+mixin VideoClassic
+  .overflow-hidden
+    +Section({image: `${CWD}${item.image}`, video: {mp4: `${CWD}${item.video}`}, className: "overlay", attrs: {"data-zanim-xs": {delay: 0.5, animation: 'zoom-out'}, "data-zanim-trigger": "scroll"}}, container).header.py-0.text-center
+      .row.align-items-center.py-7
+        .col 
+          h5.text-white.fs-9.fs-sm-8.mb-4.text-uppercase(data-zanim-xs!= {delay:1.2})=  item.intro
+          h1.text-white.fs-6.fs-sm-4.fw-bold.ls-3.text-uppercase.overflow-hidden 
+            span.d-block(data-zanim-xs!= {delay:1.3})= item.titleOne 
+            span.d-block(data-zanim-xs!= {delay:1.4})= item.titleTwo 
+          .text-white(data-zanim-xs!= {delay:1.5}) 
+            a(href="#!").fw-medium.fs-9.fs-sm-7.text-white.text-capitalize= item.subtitleOne
+            span.px-2.fs-10.d-inline-block &#9679;
+            a(href="#!").fw-medium.fs-9.fs-sm-7.text-white.text-capitalize= item.subtitleTwo
+            span.px-2.fs-10.d-inline-block &#9679;
+            a(href="#!").fw-medium.fs-9.fs-sm-7.text-white.text-capitalize= item.subtitleThree
+          a.btn.rounded-capsule.btn-primary.mt-5(href="#!" data-zanim-xs!= {delay:1.7}) Our Story  
+      +ScrollSpyButton({
+        attrs: {"data-zanim-xs": {delay: 2.3}, "data-zanim-trigger": "scroll"}
+      })
+    #target-down
+

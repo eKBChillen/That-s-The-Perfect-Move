@@ -1,0 +1,51 @@
+mixin PartnersIntro
+  h4.font-base.fw-normal.text-900.lh-2 We work with companies, governments, nonprofits and other organizations to address complex challenges on a worldwide scale. Our partners are very important to our growth and success.
+  hr.my-6
+  h5.mt-6.mb-4.text-uppercase.ls-1.fw-normal.text-1100.lh-2 Partners 
+  .row.mt-5.align-items-center 
+    .col 
+      img.img-fluid(src=`${CWD}assets/img/partner-2.png`, alt="")
+    .col 
+      img.img-fluid(src=`${CWD}assets/img/partner-3.png`, alt="")
+    .col 
+      img.img-fluid(src=`${CWD}assets/img/partner-4.png`, alt="")
+    .col 
+      img.img-fluid(src=`${CWD}assets/img/partner-1.png`, alt="")
+  hr.my-6
+  h5.mt-6.mb-3.text-uppercase.ls-1.fw-normal.text-1100 Become a Partner 
+  p If you would like to partner with us, fill out the form below and one of our staff members will get back to you soon.
+
+mixin PartnersForm 
+  form(data-form onsubmit='return false;')
+    .row 
+      .col-md-12 
+        .form-group.mt-2 
+          input.form-control(type='hidden' name='to' value='username@domain.extension') 
+      .col-md-6.pe-lg-3 
+        .form-group.mt-2 
+          label(for="exampleInputName1") Name *
+          input#exampleInputName1.form-control(type="text" name="firstName" required)
+          small First Name
+      
+      .col-md-6.ps-lg-3  
+        .form-group.mt-2 
+          label(for="exampleInputName2") &nbsp;
+          input#exampleInputName2.form-control(type="text" name="lastName" required)
+          small Last Name
+      .col-12 
+        .form-group.mt-2 
+          label(for="exampleInputEmail") Email Address *
+          input#exampleInputEmail.form-control(type="email", name="from" required)  
+      
+      .col-12 
+        .form-group.mt-2 
+          label(for="exampleInputCompany")  Organization Name *
+          input#exampleInputCompany.form-control(type="text", name="company" required) 
+      
+      .col-12 
+        .form-group.mt-2 
+          label(for="exampleInputMessage")  Comments (Optional)
+          textarea#exampleInputMessage.form-control(name="message" rows='5')
+
+      .col-12 
+        input#exampleInputSubmit.btn.btn-dark.fs-9.ls-1.mt-3(type="submit" name="submit" value="Submit")

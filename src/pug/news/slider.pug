@@ -1,0 +1,14 @@
+extends ../layouts/LayoutTheme
+include ../mixins/common/Slider
+include ../mixins/news/Slider
+include ../mixins/news/Comment
+
+
+prepend styles 
+
+prepend scripts
+
+block navbarTop
+  +Navbar().position-relative.bg-dark
+append content 
+  +SliderContent

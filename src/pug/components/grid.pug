@@ -1,0 +1,19 @@
+extends ../layouts/LayoutComponent
+include ../mixins/components/Grid
+
+prepend styles 
+
+prepend scripts
+
+append variables
+  - var pageTitle = 'Grid'
+  - var pageDes = 'Utilize responsive grids to organize content effortlessly, ensuring a clean and adaptable layout for any screen size.'
+
+append component 
+  h4 Bootstrap 5 grid system
+  +BootstrapComponentLink({
+    link: `https://getbootstrap.com/docs/${bootstrapVersion}/layout/grid/`,
+    name: pageTitle,
+  })
+
+  +Grids

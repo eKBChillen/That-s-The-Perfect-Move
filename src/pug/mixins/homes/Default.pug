@@ -1,0 +1,53 @@
+mixin HeroSection(title) 
+  +Section({
+    image: `${CWD}assets/img/header-01.jpg`, 
+    className: 'overlay', 
+    attrs: {
+      'data-zanim-xs': {
+        delay: 0,
+        ease: 'Sine.easeInOut',
+        duration: 1,
+        from: {
+          scale: 1.05,
+          alpha: 0
+        },
+        to: {
+          scale: 1,
+          alpha: 1
+        }
+      }
+    }
+  }, container).py-0.overflow-hidden(data-zanim-timeline={ delay: 0 },data-zanim-trigger="scroll")
+    .row.flex-center(class=`${title === 'classic' ? 'min-vh-75' : 'min-vh-100'}`) 
+      .col-auto.text-center 
+        p.fst-italic.text-white.fs-8.text-base.mb-3(
+          data-zanim-xs!={
+            delay: 0.7,
+            duration: 0.7,
+            ease: 'Power2.easeOut',
+            from: { y: 20, opacity: 0 },
+            to: { y: 0, opacity: 1 }
+          }
+        ) Success Stories
+
+        h3.text-uppercase.text-white.fw-bolder.fs-6.fs-lg-5.mb-7(
+          data-zanim-xs!={
+            delay: 0,
+            duration: 1,
+            ease: 'Sine.easeInOut',
+            from: { letterSpacing: '0.25em', opacity: 0 },
+            to: { letterSpacing: '0.05em', opacity: 1 }
+          }
+        ) start with you 
+
+        button.btn.btn-primary.rounded-capsule.ls-1(
+          data-zanim-xs!={
+            delay: 1.2,
+            duration: 0.7,
+            ease: 'Power2.easeOut',
+            from: { y: -20, opacity: 0 },
+            to: { y: 0, opacity: 1 }
+          }
+        ) Learn More 
+
+    +ScrollSpyButton({url: '#secondSection', offset: '400'})

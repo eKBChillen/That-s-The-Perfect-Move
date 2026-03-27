@@ -1,0 +1,24 @@
+extends ../layouts/LayoutAbout
+
+
+prepend styles 
+
+prepend scripts
+
+append variables 
+  - var pageTitle = 'Projects'
+  - var bannerBg = 'projects.jpg'
+
+append aboutContent 
+  h4.font-base.fw-light.text-900.lh-2 We love to help the doers and the makers in developing and sharing their diverse stories that continuously creating social changes.
+  img.my-3.img-fluid(src=`${CWD}assets/img/project-01.jpg`, alt="")
+  h5.mt-3.mb-2.text-uppercase.ls-1.fw-normal.text-black Stunning Apps
+  p.mb-6 Etiam porta sem malesuada magna mollis euismod. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+  
+  img.my-3.img-fluid(src=`${CWD}assets/img/project-02.jpg`, alt="")
+  h5.mt-3.mb-2.text-uppercase.ls-1.fw-normal.text-black Beautifully Crafted Websites
+  p.mb-6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
+  
+  img.my-3.img-fluid(src=`${CWD}assets/img/project-03.jpg`, alt="")
+  h5.mt-3.mb-2.text-uppercase.ls-1.fw-normal.text-black And Your Single Project Anywhere
+  p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.

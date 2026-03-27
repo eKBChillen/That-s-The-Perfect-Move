@@ -1,0 +1,20 @@
+mixin ScrollSpyButton(config)
+  a.text-white.down-arrow(href=`${config.url ? config.url : "#secondSection"}` data-offset= `${config.offset ? config.offset : '400'}` )&attributes(config.attrs)
+    span.indicator-home-arrow(
+      data-zanim-xs!={
+        ease: 'Back.easeOut',
+        delay: 1.95,
+        duration: 0.4,
+        from: { y: 0, opacity: 0 },
+        to: { y: 16, opacity: 1 }
+      }
+    )
+    span.indicator-home-arrow(
+      data-zanim-xs!={
+        ease: 'Back.easeOut',
+        delay: 2.2,
+        duration: 0.4,
+        from: { y: 0, opacity: 0 },
+        to: { y: 10, opacity: 1 }
+      }
+    )

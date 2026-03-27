@@ -1,0 +1,17 @@
+extends ../layouts/LayoutTheme
+
+include ../mixins/common/HomesPageInfo
+include ../mixins/homes/Default
+
+
+prepend styles 
+
+prepend scripts
+
+prepend variables 
+  - var dir = 'rtl'
+
+
+append content 
+  +HeroSection('index')
+  +HomesPageInfo

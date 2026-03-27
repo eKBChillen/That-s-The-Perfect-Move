@@ -1,0 +1,75 @@
+mixin Comment 
+  - 
+    var comments = [
+      {
+        containerBg: 'bg-200',
+        commenterImage: `${CWD}assets/img/team/member-5.png`,
+        commenterName: 'Anne Brady',
+        commentDate: '10th May 2017',
+        comment: 'I confess that, for many years, I was a bit of a job’s worth. I was a designer, and I spent much of my working life complaining because other people weren’t doing their jobs properly.',
+        replies:[
+          {
+            replierImg: `${CWD}assets/img/team/member-6.png`,
+            replierName: 'Jacob Sims',
+            replyDate: '10th May 2017',
+            reply: 'Providing elements in two separate layers which are larger than the displayed (i.e. masked) size creates the opportunity for interesting visual treatments and animations.'
+          }
+        ]
+      },
+      {
+        containerBg: 'bg-light',
+        commenterImage: `${CWD}assets/img/team/member-7.png`,
+        commenterName: 'Alice Merriweather',
+        commentDate: '11th May 2017',
+        comment: 'To be fair to my younger self, these were all real problems. But I did nothing but moan about them. I made no effort to help my colleagues fix these issues.'
+      },
+      {
+        containerBg: 'bg-200',
+        commenterImage: `${CWD}assets/img/team/member-8.png`,
+        commenterName: 'Lura Smith',
+        commentDate: '11th May 2017',
+        comment: 'When I did eventually wake up and start paying attention, I discovered a bigger world. I found out just how interconnected digital and the user experience are, and how many things beyond the screen influence the experience.'
+      },
+    ]
+  .my-4.font-sans-serif.fs-10 
+    a.link-500.pe-5(href="#!")
+      span.fas.fa-heart.text-400.me-2 
+      | 152 Likes
+    a.link-500(href="#!")
+      span.fas.fa-share-alt.text-400.me-2 
+      | Share
+  
+  h5.text-uppercase.mt-5.mt-lg-8.mb-4.font-base.fw-normal.text-800 17 Comments 
+  ul.no-style.ps-0 
+    each item in comments
+      li.d-flex.align-items-start.p-2.p-md-4(class=item.containerBg)
+        img.me-3.img-thumbnail(src=item.commenterImage, alt="" width=60)
+        .flex-1 
+          h5.mb-0.fs-9.text-800= item.commenterName 
+          small.text-600.fw-semi-bold 
+            span= item.commentDate 
+            a.ms-2(href="#!") Reply 
+          p.mt-3= item.comment 
+          
+          if item.replies && item.replies.length 
+            each replyItem in item.replies 
+              hr.mt-4
+              .mt-4.ps-0
+                .d-flex.align-items-start
+                  img.me-3.img-thumbnail(src=replyItem.replierImg, alt="" width=60)
+                  .flex-1 
+                    h5.mb-0.fs-9.text-800= replyItem.replierName 
+                    small.text-600.fw-semi-bold 
+                      span= replyItem.replyDate 
+                      a.ms-2(href="#!") Reply 
+                    p.mt-3= replyItem.reply 
+  h5.text-uppercase.mt-6.mb-3.fw-normal.font-base Leave a comment 
+  form.mt-4.row(onsubmit='return false;') 
+    .col-md-6
+      input.form-control.mb-3(type="text" placeholder="Name" name="name")
+    .col-md-6
+      input.form-control.mb-3(type="email" name="email" placeholder="Email")
+    .col-12 
+      textarea.form-control.mb-3(name="comment", rows="8" placeholder='Comment')
+    .col-12 
+      button.btn.btn-dark.text-uppercase.ls-1(type="submit") Post comment

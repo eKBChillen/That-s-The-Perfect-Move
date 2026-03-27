@@ -1,0 +1,22 @@
+extends ../layouts/LayoutComponent
+
+include ../mixins/components/Spacing
+
+prepend styles 
+
+prepend scripts
+
+
+append variables
+  - var pageTitle = 'Spacing'
+  - var pageDes = 'Refine your layout with customizable spacings, ensuring optimal alignment and breathing room between elements for a polished design.'
+
+append component
+
+  +BootstrapComponentLink({
+    link: `https://getbootstrap.com/docs/${bootstrapVersion}/utilities/spacing/`,
+    name: pageTitle,
+  })
+
+  +SpacingDocDescription 
+  +SpacingDoc

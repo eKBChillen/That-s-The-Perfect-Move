@@ -1,0 +1,78 @@
+extends ../layouts/LayoutComponent
+include ../mixins/components/Buttons
+
+prepend styles 
+
+prepend scripts
+
+append variables
+  - var pageTitle = 'Buttons'
+  - var pageDes = 'Discover versatile button styles, designed for seamless interactions and adaptable to any design requirement.'
+
+append component 
+
+  h4 Buttons Colors 
+  p 
+    strong baikal 
+    | use
+    code .btn
+    | class for default button style. Customize the color of a button using
+    code .btn-*
+    |  and
+    code .btn-outline-*
+    | . You can use the following classes. 
+  p For detail documentation, 
+    a(href=`https://getbootstrap.com/docs/${bootstrapVersion}/components/buttons/`) View Buttons on Bootstrap 
+      span.ms-1 &xrarr;
+
+  +ComponentCard({
+    title: 'Solid Buttons',
+    titleClass: 'fs-8 fw-normal',
+    prismClass: 'mt-5'
+  }).mt-5.mb-3
+    +SolidButtonsExample
+
+  +ComponentCard({
+    title: 'Outline Buttons',
+    titleClass: 'fs-8 fw-normal',
+    prismClass: 'mt-5'
+  }).mt-5.mb-3
+    +OutlineButtonsExample
+
+  h4 Buttons Sizes 
+  p Customize the size of a button using 
+    code .btn-xs
+    | ,
+    code .btn-sm 
+    | and 
+    code .btn-lg 
+
+  +ComponentCard({
+    prismClass: 'mt-5'
+  }).mt-4.mb-6
+    +ButtonSizesExample
+
+  +ButtonsShape
+
+  .d-md-none
+    h4 Button Group
+    p 
+      | Group a series of buttons together on a single line with the button group. Wrap a series of buttons with 
+      code .btn 
+      | in
+      code .btn-group 
+    +ComponentCard({
+      prismClass: 'mt-5'
+    }).mb-6
+      +VerticalButtonGroupExample 
+  .d-none.d-md-block.button-component
+    h4 Button Group
+    p 
+      | Group a series of buttons together on a single line with the button group. Wrap a series of buttons with 
+      code .btn 
+      | in
+      code .btn-group 
+    +ComponentCard({
+      prismClass: 'mt-4'
+    }).mb-6
+      +ButtonGroupExample 

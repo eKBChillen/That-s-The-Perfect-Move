@@ -1,0 +1,54 @@
+.navbar1 {
+    background-color: rgb(11,23,39) !important;
+}
+  
+.headtext {
+    color: rgb(11,23,39) !important;
+    background-color: rgba(255, 255, 255, 0.5);   
+}
+
+.headtext1 {
+    color: rgb(11,23,39) !important;
+    background-color: rgba(255, 255, 255, 0.5); 
+    margin-right: 25vw;
+    margin-left: 25vw;
+}
+.button1 {
+    background-color: rgb(11,23,39) !important;
+}
+
+.button1:hover {
+        background-color: #0b2527 !important;
+} 
+
+.sidetext1 {
+    color: #ffffff !important;
+    background-color: rgb(11,23,39) !important;
+}
+.sidetext1:hover {
+    background-color: #0b2527 !important;
+    
+}
+
+.sidetext2 {
+    color: rgb(11,23,39) !important;
+    
+}
+
+.ContactUs {
+   color: rgb(11,23,39) !important;
+}
+.header1 {
+    color: rgb(11,23,39) !important;
+    }
+
+.header2 {
+    color: rgb(11,23,39) !important;
+    background-color: rgba(255, 255, 255, 0.5); 
+    margin-left: 15vw;
+}
+
+.header3 {
+    color: #0b2527 !important;
+    
+}

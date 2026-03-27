@@ -1,0 +1,12 @@
+extends ../layouts/LayoutTheme
+include ../mixins/common/HomesPageInfo
+include ../mixins/homes/YoutubeVideo
+
+
+prepend styles 
+
+prepend scripts
+
+append content 
+    +YoutubeVideo('classic')
+    +HomesPageInfo

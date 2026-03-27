@@ -1,0 +1,30 @@
+mixin SocialIconSection 
+  +Section(container).bg-1000.py-4
+    .row 
+      .col.text-center.pb-2.d-flex.align-items-center.justify-content-center
+        a.social-icon.d-flex.align-items-center.me-2(href='#!')
+          span.fab.fa-twitter.text-1000
+        a.social-icon.d-flex.align-items-center.me-2(href='#!')
+          span.fab.fa-instagram.text-1000
+        a.social-icon.d-flex.align-items-center.me-2(href='#!')
+          span.fab.fa-pinterest.text-1000
+        a.social-icon.d-flex.align-items-center(href='#!')
+          span.fab.fa-youtube.text-1000
+          
+mixin CTABanner 
+  +Section(container).bg-1100.py-5
+    .row 
+      .col.text-center 
+        h6.text-400.fw-semi-bold.mt-3.fw-bold.ls-1.text-uppercase 
+          | 459 broadway, new york
+          span.ms-3 (212) 555-0123
+          span.ms-3.mt-1.mt-md-0.d-inline-block placeholder@gmail.com
+        p.pt-4.mb-3.text-700 
+          | Made with ❤️ by 
+          a.link-700.text-decoration-none(href="https://themewagon.com" target='_blank') 
+            span.border-bottom.border-800.border-2(style="line-height:10px; margin-bottom: 10px;") ThemeWagon 
+
+mixin Footer(attrs)
+  footer
+    +SocialIconSection
+    +CTABanner

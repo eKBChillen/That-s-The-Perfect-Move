@@ -1,0 +1,249 @@
+append variables
+  - var theme = `${name}-${version}`;
+  - var bootstrapVersion = '5.3';
+  - var attrsMain = { id: 'top', class: 'main', 'data-zanim-timeline': '{}', 'data-zanim-trigger': 'scroll' };
+  - var attrsLayout = { class: '', 'data-layout': 'container' }
+  - var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+  - var grays = [ 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100 ];
+  - var colorsAll = colors.concat(grays);
+  -
+    var themeColor =  {
+      primary: '#007AFF',
+      secondary: '#292b2c',
+      success: '#4CD964',
+      info: '#5AC8FA',
+      warning: '#FF9500',
+      danger: '#FF3B30',
+      light: '#ffffff',
+      dark: '#0c151a',
+    }
+
+  - var footer = true;
+  - var pathName = (locals.filename || locals.history[0]).split('\\').join('/').split('src/pug/').pop().split('.pug').shift();
+  - var pageTree = pathName.split('/');
+  - var pageName = pathName.split('/').pop();
+  - var CWD = pageTree.slice(1).map(() => '../').join('');
+
+  -
+    var sliderImages =[
+      {
+        imageSrc: 'assets/img/header-01.jpg'
+      },
+      {
+        imageSrc: 'assets/img/header-02.jpg'
+      },
+      {
+        imageSrc: 'assets/img/header-03.jpg'
+      },
+      {
+        imageSrc: 'assets/img/header-05.jpg'
+      },
+      {
+        imageSrc: 'assets/img/projects.jpg'
+      }
+    ]
+
+  - 
+    var sitemap = [
+      {
+        label: 'homes',
+        pages: [
+          {
+            name:'Default',
+            path: 'index',
+            pathName: 'index'
+          },
+          {
+            name:'Classic',
+            path: 'homes/index-classic',
+            pathName: 'homes/index-classic'
+          },
+          {
+            name:'video-full-height',
+            path: 'homes/youtube-video',
+            pathName: 'homes/youtube-video'
+          },
+          {
+            name:'video-classic',
+            path: 'homes/video-classic',
+            pathName: 'homes/video-classic'
+          },
+          {
+            name:'home-slider',
+            path: 'homes/home-slider',
+            pathName: 'homes/home-slider'
+          },
+          {
+            name:'slider-classic',
+            path: 'homes/slider-classic',
+            pathName: 'homes/slider-classic'
+          }
+        ],
+      },
+      {
+        label: 'About',
+        pages:[
+          {
+            name: 'what-we-do',
+            path: 'about/what-we-do',
+            pathName: 'about/what-we-do',
+          },
+          {
+            name: 'projects',
+            path: 'about/projects',
+            pathName: 'about/projects'
+          },
+          {
+            name: 'partners',
+            path: 'about/partners',
+            pathName: 'about/partners'
+          },
+          {
+            name: 'contact',
+            path: 'about/contact',
+            pathName: 'about/contact',
+          }
+        ]
+      },
+      {
+        label: 'news',
+        pages:[
+          {
+            name: 'archive',
+            path: 'news/archive',
+            pathName: 'news/archive',
+          },
+          {
+            name: 'standard',
+            path: 'news/standard',
+            pathName: 'news/standard',
+          },
+          {
+            name: 'featured',
+            path: 'news/featured',
+            pathName: 'news/featured',
+          },
+          {
+            name: 'slider',
+            path: 'news/slider',
+            pathName: 'news/slider',
+          },
+        ]
+      },
+      {
+        label: 'components',
+        pages: [
+          {
+            name: 'Background',
+            path: 'components/background',
+            pathName: 'components/background'
+          },
+          {
+            name: 'Buttons',
+            path: 'components/buttons',
+            pathName: 'components/buttons'
+          },
+          {
+            name: 'carousel',
+            path: 'components/carousel',
+            pathName: 'components/carousel'
+          },
+          {
+            name: 'colors',
+            path: 'components/colors',
+            pathName: 'components/colors'
+          },
+          {
+            name: 'Fontawesome',
+            path: 'components/fontawesome',
+            pathName: 'components/fontawesome'
+          },
+          {
+            name: 'Form-Processor',
+            path: 'components/form-processor',
+            pathName: 'components/form-processor'
+          },
+          {
+            name: 'google-map',
+            path: 'components/googlemap',
+            pathName: 'components/googlemap'
+          },
+          {
+            name: 'grid',
+            path: 'components/grid',
+            pathName: 'components/grid'
+          },
+          {
+            name: 'Sizing',
+            path: 'components/sizing',
+            pathName: 'components/sizing'
+          },
+          {
+            name: 'Parallax',
+            path: 'components/parallax',
+            pathName: 'components/parallax'
+          },
+          {
+            name: 'Spacing',
+            path: 'components/spacing',
+            pathName: 'components/spacing'
+          },
+          {
+            name: 'Swiper',
+            path: 'components/swiper',
+            pathName: 'components/swiper'
+          },
+          {
+            name: 'Typography',
+            path: 'components/typography',
+            pathName: 'components/typography'
+          },
+          {
+            name: 'utilities',
+            path: 'components/utilities',
+            pathName: 'components/utilities'
+          }
+        ]
+      },
+      {
+        label: 'docs',
+        pages: [
+          {
+            name:'Getting Started',
+            path: 'docs/getting-started',
+            pathName: 'docs/getting-started'
+          },
+          {
+            name:'File Structure',
+            path: 'docs/file-structure',
+            pathName: 'docs/file-structure'
+          },
+          {
+            name:'customization',
+            path: 'docs/customization',
+            pathName: 'docs/customization'
+          },
+          {
+            name:'gulp',
+            path: 'docs/gulp',
+            pathName: 'docs/gulp'
+          },
+          {
+            name:'RTL',
+            path: 'docs/rtl',
+            pathName: 'docs/rtl',
+          },
+          {
+            name:'plugins',
+            path: 'docs/plugins',
+            pathName: 'docs/plugins',
+          },
+          {
+            name:'changelog',
+            path: 'docs/changelog',
+            pathName: 'docs/changelog'
+          }
+        ]
+      }
+    ]
+  - var paths = flatSitemap(sitemap);

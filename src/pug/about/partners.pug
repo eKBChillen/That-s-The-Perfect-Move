@@ -1,0 +1,16 @@
+extends ../layouts/LayoutAbout
+
+include ../mixins/about/Partners
+
+
+prepend styles 
+
+prepend scripts
+
+append variables 
+  - var pageTitle = 'Partners'
+  - var bannerBg = 'partners.jpg'
+
+append aboutContent 
+  +PartnersIntro
+  +PartnersForm

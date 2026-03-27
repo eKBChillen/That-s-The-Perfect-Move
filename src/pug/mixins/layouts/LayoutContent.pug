@@ -1,0 +1,17 @@
+mixin LayoutContent  
+
+  div()&attributes(attrsLayout)
+
+    block wrapperContent
+      block beforeContent
+
+      .content()&attributes(attrsContent)
+
+        block navbarTop
+          +Navbar().fixed-top.top-0.start-0.end-0
+
+        block content
+        if footer
+          +Footer
+
+      block afterContent

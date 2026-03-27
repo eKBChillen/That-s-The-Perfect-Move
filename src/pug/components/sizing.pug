@@ -1,0 +1,28 @@
+extends ../layouts/LayoutComponent
+include ../mixins/components/LayoutHelpers
+
+prepend styles 
+
+prepend scripts
+
+append variables
+  - var pageTitle = 'Sizing'
+  - var pageDes = 'Achieve precise design control with customizable layout helpers for width and height, ensuring your components fit perfectly in any layout.'
+
+append component 
+  p 
+    | Easily make an element as wide or as tall (relative to its parent) with our widht and height utilities. includes support for 
+    code  25%
+    | ,
+    code  50%
+    | ,
+    code  75%
+    | , and 
+    code  100%
+    | by default.
+  +BootstrapComponentLink({
+    link: `https://getbootstrap.com/docs/${bootstrapVersion}/utilities/sizing/`,
+    name: pageTitle,
+  })
+
+  +LayoutHelper

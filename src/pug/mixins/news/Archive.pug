@@ -1,0 +1,118 @@
+mixin HeroSlider 
+  - 
+    var sliderItems = [
+      {
+        image: `${CWD}assets/img/header-05.jpg`,
+        date: 'January 23, 2017',
+        titleOne: 'explore your',
+        titleTwo: 'Imaginations!',
+      },
+      {
+        image: `${CWD}assets/img/header-03.jpg`,
+        date: 'January 22, 2027',
+        titleOne: 'get more traffic'
+      }
+    ]
+
+  .swiper-theme-container.theme-slider.animated-swiper(data-swiper-theme-container)&attributes(attributes)
+    .swiper(data-swiper!={
+      autoplay: {
+        delay: 6000,
+        disabledOnInteraction: false
+      },
+      spaceBetween: 30,
+      loop: true,
+      slideToClickedSlide: true,
+      slidesPerView: 1,
+      effect: 'fade'
+    })
+      .swiper-wrapper
+        each item in sliderItems
+          .swiper-slide 
+            +Section({
+              image: item.image,
+              className: 'overlay',
+              attrs: {
+                'data-zanim-xs': {
+                  delay: 0,
+                  ease: 'Sine.easeInOut',
+                  duration: 1,
+                  from: {
+                    scale: 1.05,
+                    alpha: 1
+                  },
+                  to: {
+                    scale: 1,
+                    alpha: 1
+                  }
+                }
+              }
+            }, container).py-4.overflow-hidden(data-zanim-timeline!={delay: 0} 'data-zanim-trigger'!= 'scroll')
+              .row.flex-center.py-6.min-vh-50 
+                .col-auto.text-center 
+                  p.text-white.lead.fst-italic(
+                    data-zanim-xs!={
+                      delay: 0.7,
+                      duration: 0.7,
+                      ease: 'Power2.easeOut',
+                      from: {y: 20, opacity: 0},
+                      to: {y: 0, opacity: 1}
+                    }
+                    data-zanim-trigger='scroll'
+                  )= item.date
+                  h2.text-uppercase.text-white.fw-bolder.text-center.mb-3.fs-7.fs-lg-5(
+                    data-zanim-xs!={
+                      delay: 0,
+                      ease: 'Sine.easeInOut',
+                      duration: 1,
+                      from: {
+                        letterSpacing: '0.25em',
+                        alpha: 0
+                      },
+                      to: {
+                        letterSpacing: '0.05em',
+                        alpha: 1
+                      }
+                    }
+                  )
+                    | #{item.titleOne} 
+                    if item.titleTwo 
+                      br
+                      | #{item.titleTwo}
+                  div(
+                    data-zanim-xs != {
+                      delay: 1.2,
+                      duration: 0.7,
+                      ease: 'Power2.easeOut',
+                      from: {y: -20, opacity: 0},
+                      to: {y: 0, opacity: 1}
+                    }
+                    data-zanim-trigger='scroll'
+                  )
+                    a.text-white.fs-8.fst-italic(href="#!") View Post ⟶
+      .swiper-nav
+        .swiper-button-next
+        .swiper-button-prev
+
+mixin ArchiveContent 
+  +Section(container).pt-8
+    .row.justify-content-center 
+      .col-lg-8
+        p.mb-0 January 23, 2017
+        a.d-inline-block.mb-4.fs-7.text-capitalize.link-1100(href=`${CWD}news/standard.html`) explore your imaginations!
+        .mb-8 
+          p There's no better way to help than to get out and experience nature for yourself.
+          p Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit.
+          p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        
+        p.mb-0 January 22, 2017
+        a.d-inline-block.mb-4.fs-7.text-capitalize.link-1100(href=`${CWD}news/featured.html`) Get More Traffic
+        .mb-8 
+          img.mb-4.img-fluid(src=`${CWD}assets/img/blog-01.jpg`, alt="")
+          p Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+          p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+
+        p.mb-0 January 21, 2017
+        a.d-inline-block.mb-4.fs-7.text-capitalize.link-1100(href=`${CWD}news/slider.html`) 10 Stats That Prove Social Media Isn't Just for Kids
+        p Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        +Slider

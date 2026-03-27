@@ -1,0 +1,37 @@
+extends Layout
+include ../mixins/common/Logo
+include ../mixins/common/Footer
+include ../mixins/common/Navbar
+include ../mixins/layouts/LayoutContent
+include ../mixins/common/ScrollSpyButton
+include ../mixins/Variables
+
+append headScripts
+
+prepend styles
+  link(href=`${CWD}vendors/loaders.css/loaders.min.css` rel='stylesheet' type="text/css")
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet")
+  link(rel="stylesheet", href=`${CWD}vendors/swiper/swiper-bundle.min.css`)
+
+
+
+prepend scripts
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`) 
+  script(src=`${CWD}vendors/fontawesome/all.min.js`)
+  script(src=`${CWD}vendors/lodash/lodash.min.js`)
+  script(src=`${CWD}vendors/imagesloaded/imagesloaded.pkgd.js`)
+  script(src=`${CWD}vendors/gsap/gsap.js`)
+  script(src=`${CWD}vendors/gsap/customEase.js`)
+  script(src=`${CWD}vendors/gsap/drawSVGPlugin.js`)
+
+append afterMainContent
+
+block mainContent
+  #preloader.min-vh-100.d-flex.flex-center.bg-black.w-100.position-fixed
+      .lds-ellipsis 
+        div 
+        div 
+        div 
+        div
+  +LayoutContent

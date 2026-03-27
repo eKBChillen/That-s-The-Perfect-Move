@@ -1,0 +1,51 @@
+extends LayoutTheme
+include ../mixins/common/card
+
+
+prepend styles 
+  link(rel="stylesheet", href=`${CWD}vendors/prism/prism-okaidia.css`)
+
+prepend scripts
+  script(src=`${CWD}vendors/prism/prism.js`)
+
+block content 
+  +Section({image: `${CWD}assets/img/header-04.jpg`, className: 'overlay'},container).py-6
+    .row.flex-center.py-6
+      .col-lg-8.text-center
+        .overflow-hidden
+          h2.fs-7.fs-md-6.fs-lg-5.fw-bolder.text-white.text-uppercase.lh-1(
+            data-zanim-xs!={
+              delay: 1,
+              duration: 1.4,
+              ease: 'Sine.easeInOut',
+              from: {
+                letterSpacing: '0.15em',
+                opacity: 0
+              },
+              to: {
+                letterSpacing: '0.05em',
+                opacity: 1
+              }
+            }
+          ) #{ pageTitle || 'Components' }
+        .overflow-hidden
+          p.fst-italic.text-white.mb-3.fs-8(
+            data-zanim-xs!={
+              delay: 2,
+              duration: 1.2,
+              ease: 'Power2.easeOut',
+              from: {
+                y: 20,
+                opacity: 0
+              },
+              to: {
+                y: 0,
+                opacity: 1
+              }
+            }
+          ) #{pageDes || 'Baikal is ideal for your business or organization'}
+
+  +Section(container)
+    .row.justify-content-center 
+      .col-lg-8
+        block component

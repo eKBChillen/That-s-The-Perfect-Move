@@ -1,0 +1,56 @@
+extends LayoutTheme
+include ../mixins/navbar/AboutNav
+
+
+prepend styles 
+  link(rel="stylesheet", href=`${CWD}vendors/prism/prism-okaidia.css`)
+
+prepend scripts
+  script(src=`${CWD}vendors/prism/prism.js`)
+
+block content 
+  +Section({
+    image: `${CWD}assets/img/${bannerBg}`,
+    className: 'overlay',
+    attrs: {
+      'data-zanim-xs': {
+        delay: 0,
+        ease: 'Sine.easeInOut',
+        duration: 1,
+        from: {
+          scale: 1.1,
+          alpha: 0
+        },
+        to: {
+          scale: 1,
+          alpha: 1
+        }
+      }
+    }
+  }, container).py-4.overflow-hidden
+    .row.justify-content-center 
+      .col-md-8.py-8 
+        h2.text-uppercase.text-white.fw-bolder.text-center.mb-0.fs-7.fs-md-5(
+          data-zanim-xs!={
+            delay: 0.5,
+            ease: 'Sine.easeInOut',
+            duration: 1,
+            from: {
+              letterSpacing: '0.25em',
+              alpha: 0
+            },
+            to: {
+              letterSpacing: '0.05em',
+              alpha: 1
+            }
+          }
+          data-zanim-timeline!={delay: 0.5} 
+          data-zanim-trigger!='scroll'
+        )= pageTitle 
+  
+  +Section(container).pt-7
+    .row.justify-content-center 
+      .col-lg-3.font-sans-serif.mb-3.mb-lg-0
+        +AboutNav 
+      .col-lg-8 
+        block aboutContent

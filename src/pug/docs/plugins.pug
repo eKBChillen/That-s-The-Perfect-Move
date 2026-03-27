@@ -1,0 +1,25 @@
+extends ../layouts/LayoutDocs
+include ../mixins/docs/plugins
+
+
+prepend styles 
+
+prepend scripts
+
+
+append variables
+  - var pageTitle = 'Plugins'
+  - var pageDes = 'Giving your baikal power ups'
+
+append docs 
+  h3 Adding new plugins
+  p Adding a new plugin to your Sparrow is simple. You Here are two ways you can do that.
+  h5.mt-4 Simple approach(without npm)
+  +SimpleApproach
+
+  h5.mt-4 Using npm
+  +NpmApproach
+
+  hr.text-9.mt-6
+  h3.mt-6 Built-in plugins
+  +Plugins

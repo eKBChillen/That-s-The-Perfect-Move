@@ -1,0 +1,38 @@
+/* -------------------------------------------------------------------------- */
+/*                                   Navbar                                   */
+/* -------------------------------------------------------------------------- */
+
+:root{
+  --#{$prefix}top-nav-height: 4.3125rem;
+}
+
+.navbar{
+  // Initial hover color for all navbar dropdown item
+  padding-top: 9px;
+  padding-bottom: 9px;
+  .dropdown-item {
+    color: $white;
+    padding: .4rem 1rem;
+    font-size: map-get($font-sizes, 10);
+    font-weight: $font-weight-semi-bold;
+    @include hover-focus {
+      background-color: transparent;
+      color: $white !important;
+    }
+    &.active{
+      color: $white !important;;
+      background-color: transparent;
+    }
+    @include media-breakpoint-up(lg){
+      color: var(--#{$prefix}gray-600);
+    }
+  }
+  @include media-breakpoint-down(lg){
+    & {
+      .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+mixin HeroSection 
+  +Section({
+    image: `${CWD}assets/img/header-03.jpg`,
+    className: 'overlay',
+    attrs: {
+      'data-zanim-xs': {
+        delay: 0,
+        ease: 'Sine.easeInOut',
+        duration: 1,
+        from: {
+          scale: 1.05,
+          alpha: 1
+        },
+        to: {
+          scale: 1,
+          alpha: 1
+        }
+      },
+      'data-zanim-trigger': 'scroll'
+    }
+  }, container).py-0.overflow-hidden
+    .row.flex-center.py-6.min-vh-50 
+      .col-auto.text-center 
+        p.text-white.lead.fst-italic(
+          data-zanim-xs!={
+            delay: 0.7,
+            duration: 0.7,
+            ease: 'Power2.easeOut',
+            from: {y: 20, opacity: 0},
+            to: {y: 0, opacity: 1}
+          }
+          data-zanim-trigger='scroll'
+        ) January 22, 2017
+        h2.text-uppercase.text-white.fw-bolder.text-center.mb-3.fs-7.fs-lg-5(
+          data-zanim-xs!={
+            delay: 0,
+            ease: 'Sine.easeInOut',
+            duration: 1,
+            from: {
+              letterSpacing: '0.25em',
+              alpha: 0
+            },
+            to: {
+              letterSpacing: '0.05em',
+              alpha: 1
+            }
+          }
+          data-zanim-trigger='scroll'
+        ) Get more traffic
+
+mixin Featured
+  +Section(container).pt-8
+    .row.justify-content-center 
+      .col-lg-8
+        img.mb-4.img-fluid(src=`${CWD}assets/img/blog-01.jpg` alt="")
+        p Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+        p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+        +Comment

@@ -1,0 +1,111 @@
+mixin BackgroundImageDemo
+
+  .position-relative.py-6.py-md-8
+    +Background({image: `${CWD}assets/img/header-01.jpg`})
+    .position-relative.text-center
+      h4.text-white Image Background
+
+mixin ParallaxBackgrounds
+
+  +SectionIntro({
+    title: 'Parallax Backgrounds',
+    description: `Use <code>data-parallax</code> and <code>.bg-holder</code> class and <code>.has-parallax</code> to it's parent for effect.`
+  })#parallaxBackgrounds.mt-5
+  +ComponentCardLib({
+    title: 'JavaScript',
+    titleClass: 'mt-4 mb-3'
+  })
+    script(src='vendors/rellax/rellax.js')
+  +ParallaxImageBackground
+  +ParallaxVideoBackground
+
+mixin ParallaxImageBackground
+  +ComponentCard({
+    prismClass:'mt-4'
+  }).mt-4
+    .py-6.py-md-8.has-parallax
+      +Background({
+        image: `${CWD}assets/img/header-01.jpg`,
+        className: 'overlay overlay-2 vh-100',
+        attrs: {'data-rellax-speed':'-5', 'data-parallax': 'data-parallax'}
+      })
+      .position-relative.text-center
+        h5.text-white Image Background Parallax
+
+mixin ParallaxVideoBackground
+  +ComponentCard({
+    prismClass:'mt-5'
+  }).mt-5
+    .py-6.py-md-8.has-parallax
+      +Background({
+        image: `${CWD}assets/videos/beach.jpg`,
+        video: {
+          mp4: `${CWD}assets/videos/beach`
+        },
+        className: 'overlay overlay-2 vh-100',
+        attrs: { 'data-rellax-speed':'-5', 'data-parallax': 'data-parallax'}
+      })
+      .position-relative.text-center
+        h5.text-white Video Background Parallax 
+
+
+mixin BackgroundVideoDemo
+  .position-relative
+    +Background({
+      image: `${CWD}assets/videos/beach.jpg`,
+        video: {
+          mp4: `${CWD}assets/videos/beach`
+        },
+      className:'overlay'
+    })
+    .position-relative.py-6.py-md-8.d-flex.flex-center
+      h4.text-white Video Background
+
+mixin BackgroundYoutubeVideoDemo
+  .position-relative.overflow-hidden.h-100.w-100
+    +Background({
+      image: `http://img.youtube.com/vi/teLhLLlhfzc/maxresdefault.jpg`,
+      youtube: {
+        videoId : 'teLhLLlhfzc',
+        startSeconds : 00,
+        endSeconds : 444  
+      },
+      className: 'bg-youtube'
+    })
+    .position-relative.py-6.py-md-8.d-flex.flex-center.text-center
+      h4.text-white Youtube Video Background
+
+mixin ShadesOverlayDemo 
+  .row.g-4
+    .col-sm-6
+      .position-relative.py-7
+        +Background({image: `${CWD}assets/img/header-01.jpg`, className: 'overlay'})
+        .position-relative.text-center
+          h5.text-white Image Background 
+          h6.text-white (.overlay)
+    .col-sm-6
+      .position-relative.py-7
+        +Background({image: `${CWD}assets/img/header-01.jpg`, className: 'overlay overlay-0'})
+        .position-relative.text-center
+          h5.text-white Image Background 
+          h6.text-white (.overlay-0)
+    .col-sm-6
+      .position-relative.py-7
+        +Background({image: `${CWD}assets/img/header-01.jpg`, className: 'overlay overlay-1'})
+        .position-relative.text-center
+          h5.text-white Image Background 
+          h6.text-white (.overlay-1)
+    .col-sm-6
+      .position-relative.py-7
+        +Background({
+          image: `http://img.youtube.com/vi/teLhLLlhfzc/maxresdefault.jpg`,
+            youtube: {
+              videoId : 'teLhLLlhfzc',
+              startSeconds : 00,
+              endSeconds : 444  
+          },
+          className: 'overlay overlay-2'
+        })
+        .position-relative.text-center
+          h5.text-white Youtube Background
+          h6.text-white (.overlay-2)

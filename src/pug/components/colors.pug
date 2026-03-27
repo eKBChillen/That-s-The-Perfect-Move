@@ -1,0 +1,13 @@
+extends ../layouts/LayoutComponent
+include ../mixins/components/Colors
+
+prepend styles 
+
+prepend scripts
+
+append variables
+  - var pageTitle = 'Colors'
+  - var pageDes = 'Explore a vibrant palette of customizable colors to enhance your design and create visual harmony across your site.'
+
+append component 
+  +ThemeColors

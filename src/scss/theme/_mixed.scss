@@ -1,0 +1,64 @@
+
+[data-dismiss="dropdown"],
+[data-bs-offset-top],
+[data-bs-toggle="collapse"],
+[data-bs-toggle="tooltip"],
+[data-bs-toggle="popover"] {
+  * {
+    pointer-events: none;
+  }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Height                                  */
+/* -------------------------------------------------------------------------- */
+.content {
+  min-height: 100vh;
+  position: relative;
+}
+.navbar-top {
+  & + .content{
+    min-height: calc(100vh - $top-nav-height);
+  }
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/*-----------------------------------------------
+|   Scroll Spy Arrow
+-----------------------------------------------*/
+.down-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  height: 120px;
+  width: 120px;
+}
+
+.indicator-home-arrow {
+  display: block;
+  position: absolute;
+  top: 1.6rem;
+  height: .625rem;
+  width: .625rem;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    border-left: 2px solid rgba(255, 255, 255, 1);
+    border-top: 2px solid rgba(255, 255, 255, 1);
+    transform: translate3d(-50%, -50%, 0) rotate(225deg);
+  }
+}

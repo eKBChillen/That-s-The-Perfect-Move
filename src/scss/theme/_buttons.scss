@@ -1,0 +1,97 @@
+/*-----------------------------------------------
+|   Button
+-----------------------------------------------*/
+
+
+/*-----------------------------------------------
+|   baikal buttons
+-----------------------------------------------*/
+$theme-baikal-btn-colors: (
+  "primary": var(--#{$prefix}primary),
+  "success": var(--#{$prefix}success),
+  "info": var(--#{$prefix}info),
+  "warning": var(--#{$prefix}warning),
+  "danger": var(--#{$prefix}danger),
+);
+
+@each $color,
+$value in $theme-baikal-btn-colors {
+  .btn-baikal-#{$color} {
+    @include baikal-button-variant($color);
+  }
+}
+
+
+
+/*-----------------------------------------------
+|   Brand Buttons                               |
+-----------------------------------------------*/
+
+.btn-facebook {
+  @include brand-icon-variant($facebook);
+}
+
+.btn-twitter {
+  @include brand-icon-variant($twitter);
+}
+.btn-google-plus{
+  @include brand-icon-variant($google-plus);
+}
+
+.btn-github{
+  @include brand-icon-variant($github);
+}
+.btn {
+  letter-spacing: 0.01rem;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+}
+/*-----------------------------------------------
+|   Outline Buttons
+-----------------------------------------------*/
+[class*='btn-outline-'] {
+  --#{$prefix}btn-box-shadow: none;
+  --#{$prefix}btn-border-width: 2px; 
+  text-transform: capitalize;
+}
+.btn-outline-primary { @include button-outline-variant(map-get($theme-colors, primary)); }
+.btn-outline-info { @include button-outline-variant(map-get($theme-colors, info)); }
+.btn-outline-success { @include button-outline-variant(map-get($theme-colors, success)); }
+.btn-outline-warning { @include button-outline-variant(map-get($theme-colors, warning)); }
+.btn-outline-danger { @include button-outline-variant(map-get($theme-colors, danger)); }
+.btn-outline-light { 
+    @include button-outline-variant(map-get($theme-colors, light));
+    &:hover, &:active, &:focus, &:active:focus { color: $gray-800 }
+}
+
+.btn-xs {
+  --#{$prefix}btn-padding-x: 0.8rem;
+  --#{$prefix}btn-padding-y: 0.2rem;
+}
+
+.btn-link {
+  --#{$prefix}btn-font-weight: #{$font-weight-semi-bold};
+  --#{$prefix}btn-active-color: var(--#{$prefix}link-hover-color);
+
+}
+
+// disabled btn box shadow
+.btn {
+  &:disabled {
+    @include box-shadow(var(--#{$prefix}btn-box-shadow));
+  }
+}
+
+.btn-dark {
+  color: $white;
+  background-color: var(--#{$prefix}dark);
+  border-color: var(--#{$prefix}dark);
+
+  @include hover-focus {
+    color: $white;
+    background-color: #0c0c0c;
+    border-color: #060606;
+  }
+}
+

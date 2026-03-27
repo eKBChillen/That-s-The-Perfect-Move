@@ -1,0 +1,90 @@
+extends ../layouts/LayoutDocs
+
+
+prepend styles 
+
+prepend scripts
+
+
+append variables
+  - var pageTitle = 'Changelog'
+  - var pageDes = 'Evolution of your baikal'
+
+append docs 
+
+  .card.mb-3 
+    .card-header.bg-200
+      h5.mb-2
+        code.fw-bold.fs-8 v3.1.0
+        |  - Maintenance Update
+      p.mb-0 22 December, 2025
+    .card-body
+      h5.fs-9 New 
+      ul.bullet-inside.ps-0
+        li Page: 
+          code public/components/form-processor.html 
+
+      h5.fs-9.mt-3 Update
+      ul.bullet-inside.ps-0
+        li Package: 
+          code bootstrap
+          |  from 
+          code 5.3.2
+          |  to 
+          code 5.3.8
+        li Package: 
+          code prismjs
+          |  from 
+          code 1.29.0
+          |  to 
+          code 1.30.0
+        li Package: 
+          code swiper
+          |  from 
+          code 11.0.6
+          |  to 
+          code 12.0.3
+        li Page: removed 
+          code public/components/smtp.html 
+        li JS: 
+          code src/js/form-processor.js 
+        li JS: Google map has been updated to V3 API in 
+          code src/js/googleMap.js
+        li Docs: 
+          code Google Map 
+      h5.fs-9.mt-3 Fix 
+      ul.bullet-inside.ps-0
+        li Minor bug fixes. 
+
+  .card.bg-100.mb-4 
+    .card-body
+      h5.mb-2.fw-bold
+        code.fs-8.bg-transparent V3.0.0
+        | - Initial Release
+      p 28 September, 2024
+      hr.my-1
+      h5.fs-9.mt-3.mb-2.fw-bold Update
+      ul.text-1000.ps-3.mb-0
+        li.fs-9 Converted bootstrap 4.x to 5.x.
+  
+  .card.bg-100.mb-4 
+    .card-body
+      h5.mb-2.fw-bold
+        code.fs-8.bg-transparent V2.0.0
+        | - Initial Release
+      p 07 November, 2019
+      hr.my-1
+      h5.fs-9.mt-3.mb-2.fw-bold Update
+      ul.text-1000.ps-3.mb-0
+        li.fs-9 Nothing to see here.
+  
+  .card.bg-100
+    .card-body
+      h5.mb-2.fw-bold
+        code.fs-8.bg-transparent V1.0.0
+        | - Initial Release
+      p 28 August, 2017
+      hr.my-1
+      h5.fs-9.mt-3.mb-2.fw-bold Update
+      ul.text-1000.ps-3.mb-0
+        li.fs-9 Nothing to see here.

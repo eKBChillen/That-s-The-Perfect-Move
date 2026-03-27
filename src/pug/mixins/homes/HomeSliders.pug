@@ -1,0 +1,158 @@
+append variables 
+  - 
+    var sliderItems = [ 
+      {
+        image: `assets/img/header-01.jpg`,
+        title: 'your creative self',
+        subTitle: 'Connecting with'
+      },
+      {
+        image: `assets/img/header-02.jpg`,
+        title: 'start with you',
+        subTitle: 'Success stories'
+      }
+    ]
+
+mixin HomeSlider
+  .swiper-theme-container.theme-slider.animated-swiper(data-swiper-theme-container)
+    .swiper(data-swiper!={
+      loop: true,
+      slideToClickedSlide: true,
+      slidesPerView: 1,
+      effect: 'fade',
+      autoplay: {
+        delay: 5000,
+        disabledOnInteraction: false
+      }
+    })
+      .swiper-wrapper
+        each item in sliderItems
+          .swiper-slide
+            +Section({
+              image: `${CWD}${item.image}`, 
+              className: "overlay", 
+              attrs: {
+                'data-zanim-xs': {
+                  delay: 0,
+                  ease: 'Sine.easeInOut',
+                  duration: 1,
+                  from: {
+                    scale: 1.05,
+                    alpha: 1
+                  },
+                  to: {
+                    scale: 1,
+                    alpha: 1
+                  }
+                }
+              }
+            }, container).py-0.overflow-hidden(data-zanim-timeline={ delay: 0 })
+              .row.flex-center.py-6.py-lg-8.min-vh-100
+                .col-auto.text-center 
+                  p.fst-italic.mb-2.text-white.fs-8.font-base(
+                    data-zanim-xs!={
+                      delay: 0.7,
+                      duration: 0.7,
+                      ease: 'Power2.easeOut',
+                      from: {y: 20, opacity: 0},
+                      to: {y: 0, opacity: 1}
+                    }
+                  )= item.subTitle
+                  h2.text-uppercase.text-white.mb-4.mb-md-5.fw-bolder.fs-6.fs-lg-5.pt-1(
+                    data-zanim-xs!={
+                      delay: 0,
+                      duration: 1,
+                      ease: 'Sine.easeInOut',
+                      from: {letterSpacing: '0.25em', opacity: 0},
+                      to: {letterSpacing: '0.05em', opacity: 1}
+                    }
+                  )= item.title
+
+                  button.btn.btn-primary.rounded-capsule.mt-3.ls-1(
+                    href="#!"
+                    data-zanim-xs!={
+                      delay: 1.2,
+                      duration: 0.7,
+                      ease: 'Power2.easeOut',
+                      from: {y: -20, opacity: 0},
+                      to: {y: 0, opacity: 1}
+                    }
+                  ) Learn More  
+              +ScrollSpyButton({url: '#secondSection', offset: '400'})           
+
+
+      .swiper-nav
+        .swiper-button-next.swiper-button-white
+        .swiper-button-prev.swiper-button-white
+
+
+mixin SliderClassic
+  .swiper-theme-container.theme-slider.animated-swiper(data-swiper-theme-container)
+    .swiper(data-swiper!={
+      loop: true,
+      slideToClickedSlide: true,
+      slidesPerView: 1,
+      effect: 'fade',
+      autoplay: {
+        delay: 5000,
+        disabledOnInteraction: false
+      }
+    })
+      .swiper-wrapper
+        each item in sliderItems
+          .swiper-slide
+            +Section({
+              image: `${CWD}${item.image}`, 
+              className: "overlay", 
+              attrs: {
+                'data-zanim-xs': {
+                  delay: 0,
+                  ease: 'Sine.easeInOut',
+                  duration: 1,
+                  from: {
+                    scale: 1.05,
+                    alpha: 1
+                  },
+                  to: {
+                    scale: 1,
+                    alpha: 1
+                  }
+                }
+              }
+            }, container).py-0.overflow-hidden(data-zanim-timeline={ delay: 0 })  
+              .row.flex-center.py-6.py-lg-8.min-vh-75
+                .col-auto.text-center 
+                  p.fst-italic.mb-2.text-white.fs-8.font-base(
+                    data-zanim-xs!={
+                      delay: 0.7,
+                      duration: 0.7,
+                      ease: 'Power2.easeOut',
+                      from: {y: 20, opacity: 0},
+                      to: {y: 0, opacity: 1}
+                    }
+                  )= item.subTitle
+                  h2.text-uppercase.text-white.mb-4.mb-md-5.fw-bolder.fs-6.fs-lg-5.pt-1(
+                    data-zanim-xs!={
+                      delay: 0,
+                      duration: 1,
+                      ease: 'Sine.easeInOut',
+                      from: {letterSpacing: '0.25em', opacity: 0},
+                      to: {letterSpacing: '0.05em', opacity: 1}
+                    }
+                  )= item.title
+
+                  button.btn.btn-primary.rounded-capsule.mt-3.ls-1(
+                    data-zanim-xs!={
+                      delay: 1.2,
+                      duration: 0.7,
+                      ease: 'Power2.easeOut',
+                      from: {y: -20, opacity: 0},
+                      to: {y: 0, opacity: 1}
+                    }
+                  ) Learn More  
+              +ScrollSpyButton({url: '#secondSection', offset: '400'})  
+
+      .swiper-nav
+        .swiper-button-next.swiper-button-white
+        .swiper-button-prev.swiper-button-white
+
