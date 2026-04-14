@@ -5,8 +5,12 @@ function sendMail() {
         email: document.querySelector("#email").value,
         message: document.querySelector("#message").value,
     }
-    emailjs
-    .send("service_sfpn8s9", "template_8w09g98", templateParams)
+
+    Form.addEventListener("submit", function(event) {
+        event.preventDefault();
+    });
+    
+    emailjs.send("service_sfpn8s9", "template_8w09g98", templateParams)
     .then(() => {
         alert("Message sent successfully");
     })
