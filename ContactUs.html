@@ -35,6 +35,12 @@
     <link href="./public/assets/css/theme.css" rel="stylesheet" />
     <link href="./public/assets/css/user.css" rel="stylesheet" />
     <link rel="stylesheet" href="stylesheet.css"/>
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "nxZH1PdKHf04shkik",});
+          })();</script>
 
   </head>
 
@@ -121,19 +127,26 @@
                           <div class="row">
                             <div class="col-md-12">
                               <div class="form-group mt-2">
-                                <input class="form-control" type="hidden" name="to" value="thatstheperfectmove@gmail.com" />
+                                <label for="exampleInputEmail">Your Name *</label>
+                                <input class="form-control " type="text" id="name" placeholder="Your Name" required/>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <div class="form-group mt-2">
+                                <label for="exampleInputEmail">Phone Number *</label>
+                                <input class="form-control " type="tel" id="number" placeholder="Your Phone Number" required/>
                               </div>
                             </div>
                             <div class="col-12">
                               <div class="form-group mt-2">
                                 <label for="exampleInputEmail">Email Address *</label>
-                                <input class="form-control" id="exampleInputEmail" type="email" name="from" required="required" />
+                                <input class="form-control" type="email" id="email" placeholder="Email" required/>
                               </div>
                             </div>
                             <div class="col-12">
                               <div class="form-group mt-2">
                                 <label for="exampleInputMessage"> Message *</label>
-                                <textarea class="form-control" id="exampleInputMessage" name="message" rows="8" required="required"></textarea>
+                                <textarea class="form-control bg-white" id="message" rows="11" placeholder="Enter your message here..." required></textarea>
                               </div>
                             </div>
                             <div class="col-12">
