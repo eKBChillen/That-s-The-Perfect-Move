@@ -3,7 +3,7 @@ function sendMail() {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         message: document.getElementById("message").value,
-        "phone number": document.getElementById("phone").value,
+        number: document.getElementById("phone").value,
     }
     emailjs.send("service_9l7vt7k", "template_8w09g98", parms)
     .then(() => {
