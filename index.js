@@ -10,7 +10,7 @@ function sendMail() {
         event.preventDefault();
     });
     
-    emailjs.send("service_sfpn8s9", "template_8w09g98", templateParams)
+    emailjs.send("service_9l7vt7k", "template_8w09g98", templateParams)
     .then(() => {
         alert("Message sent successfully");
     })
